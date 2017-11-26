@@ -3,3 +3,8 @@
   width: 7vw;
   height: 7vh;
 }
+
+#rendered {
+  height: 80vh;
+  width: 100%;
+}

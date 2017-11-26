@@ -4,9 +4,7 @@ import './App.css';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-import FilmQuestions from './components/trivia-columns/FilmQuestions';
-import GeneralQuestions from './components/trivia-columns/GeneralQuestions';
-import VideoGameQuestions from './components/trivia-columns/VideoGameQuestions';
+import Questions from './components/trivia-columns/Questions';
 
 export default class App extends Component {
   constructor(props) {
@@ -33,7 +31,7 @@ export default class App extends Component {
     });
 
     var filmUrl = 'https://opentdb.com/api.php?amount=3&category=11&type=multiple';
-    var genUrl = 'https://opentdb.com/api.php?amount=3&category=11&type=multiple';
+    var genUrl = 'https://opentdb.com/api.php?amount=3&category=9&type=multiple';
     var vidUrl = 'https://opentdb.com/api.php?amount=3&category=15&type=multiple';
 
     axios.get(filmUrl)
@@ -85,9 +83,9 @@ export default class App extends Component {
     if ((filmResponse.length === 3) && (genResponse.length === 3) && (vidResponse.length === 3)) {
       display = (
         <div id='columns'>
-          <FilmQuestions data={ this.state.filmResponse }/>
-          <GeneralQuestions data={ this.state.genResponse }/>
-          <VideoGameQuestions data={ this.state.vidResponse }/>
+          <Questions data={ this.state.filmResponse }/>
+          <Questions data={ this.state.genResponse }/>
+          <Questions data={ this.state.vidResponse }/>
         </div>
         )
       }
