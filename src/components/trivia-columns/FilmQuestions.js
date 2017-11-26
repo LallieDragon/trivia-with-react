@@ -10,10 +10,10 @@ export default class FilmQuestions extends Component {
 
   makeDisplays() {
     let filmDivs = [];
-    for (let i; i < 3; i++) {
+    for (let i; i < this.props.data.length; i++) {
       filmDivs.push(
         <div classname="film" key={ i }>
-          <h1 id="cat-title"> { this.props[i].category } </h1>
+          <h1 id="cat-title"> { this.props.data[i].category } </h1>
         </div>
         )
     }
@@ -21,10 +21,15 @@ export default class FilmQuestions extends Component {
   }
 
   render() {
-    return (
-      <div className="rendered-film">
-        { this.props.results[0].category }
+    var display;
+    display = (
+      <div id="rendered-films">
+        { this.makeDisplays() }
       </div>
+    )
+
+    return (
+      { display }
     );
   }
 }

@@ -85,9 +85,9 @@ export default class App extends Component {
     if ((filmResponse.length === 3) && (genResponse.length === 3) && (vidResponse.length === 3)) {
       display = (
         <div id='columns'>
-          <FilmQuestions props={ this.state.filmResponse }/>
-          <GeneralQuestions props={ this.state.genResponse }/>
-          <VideoGameQuestions props={ this.state.vidResponse }/>
+          <FilmQuestions data={ this.state.filmResponse }/>
+          <GeneralQuestions data={ this.state.genResponse }/>
+          <VideoGameQuestions data={ this.state.vidResponse }/>
         </div>
         )
       }
