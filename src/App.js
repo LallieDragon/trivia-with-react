@@ -10,9 +10,7 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      filmResponse: [],
-      genResponse: [],
-      vidResponse: []
+      responseData: []
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.axiosRequestFilm = this.axiosRequestFilm.bind(this);
@@ -25,23 +23,18 @@ export default class App extends Component {
 
   axiosRequestFilm() {
     this.setState({
-      filmResponse: [],
-      genResponse: [],
-      vidResponse: []
+      responseData: []
     });
 
-    var filmUrl = 'https://opentdb.com/api.php?amount=3&category=11&type=multiple';
-    var genUrl = 'https://opentdb.com/api.php?amount=3&category=9&type=multiple';
-    var vidUrl = 'https://opentdb.com/api.php?amount=3&category=15&type=multiple';
+    var filmUrl = 'https://opentdb.com/api.php?amount=4&category=11&type=multiple';
+    var genUrl = 'https://opentdb.com/api.php?amount=4&category=9&type=multiple';
+    var vidUrl = 'https://opentdb.com/api.php?amount=4&category=15&type=multiple';
 
     axios.get(filmUrl)
       .then((response) => {
-        console.log(response);
-        for (let i of response.data.results) {
-          this.setState({
-            filmResponse: this.state.filmResponse.concat([i])
-          })
-        }
+        this.setState({
+          responseData: this.state.responseData.concat(response.data.results)
+        })
       })
       .catch((error) => {
         console.log(error)
@@ -49,12 +42,9 @@ export default class App extends Component {
 
     axios.get(genUrl)
       .then((response) => {
-        console.log(response);
-        for (let i of response.data.results) {
-          this.setState({
-            genResponse: this.state.genResponse.concat([i])
-          })
-        }
+        this.setState({
+          responseData: this.state.responseData.concat(response.data.results)
+        })
       })
       .catch((error) => {
         console.log(error)
@@ -62,12 +52,9 @@ export default class App extends Component {
 
     axios.get(vidUrl)
       .then((response) => {
-        console.log(response);
-        for (let i of response.data.results) {
-          this.setState({
-            vidResponse: this.state.vidResponse.concat([i])
-          })
-        }
+        this.setState({
+          responseData: this.state.responseData.concat(response.data.results)
+        })
       })
       .catch((error) => {
         console.log(error)
@@ -76,16 +63,11 @@ export default class App extends Component {
 
   render() {
     var display;
-    let filmResponse = this.state.filmResponse;
-    let genResponse = this.state.genResponse;
-    let vidResponse = this.state.vidResponse;
 
-    if ((filmResponse.length === 3) && (genResponse.length === 3) && (vidResponse.length === 3)) {
+    if (this.state.responseData.length === 12) {
       display = (
-        <div id='columns'>
-          <Questions data={ this.state.filmResponse }/>
-          <Questions data={ this.state.genResponse }/>
-          <Questions data={ this.state.vidResponse }/>
+        <div id='questions'>
+          <Questions responseData={ this.state.responseData }/>
         </div>
         )
       }
@@ -101,7 +83,7 @@ export default class App extends Component {
         <Header />
 
         <div id="start-button">
-          <button onClick={ this.handleSubmit }>(re)Start Game</button>
+          <button onClick={ this.handleSubmit }><a>(re)</a>Start Game</button>
         </div>
 
         { display }

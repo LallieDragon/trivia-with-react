@@ -1,4 +1,5 @@
 #empty-box {
-  height: 80vh;
-  width: 100%;
+  height: 81vh;
+  width: 98%;
+  border: 2px solid black;
 }
