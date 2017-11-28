@@ -26,7 +26,9 @@ export default class SelectedCategory extends Component {
     }
     else {
       questionComponent = (<Answer category={ this.props.category }
-                                   handleScore={ this.handleScore }/>)
+                                   hasBeenSelected={ this.props.hasBeenSelected }
+                                   handleScore={ this.props.handleScore }
+                                   appInfo={ this.props.appInfo } />)
     }
 
 

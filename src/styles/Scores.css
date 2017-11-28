@@ -1,12 +1,16 @@
 #scores {
-  width: 20vw;
-  height: 80vh;
+  width: 60vw;
+  height: 10vh;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  flex-direction: row;
+  align-content: space-around;
 }
 
 .scores {
-  height: 20vh;
-  border: 2px solid black;
+  height: 10vh;
+  width: 60vw;
+}
+
+h1 {
+  font-size: 2vh;
 }

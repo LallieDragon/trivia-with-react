@@ -8,7 +8,6 @@ export default class Category extends Component {
   }
 
   handleClick(index) {
-    console.log('HANDLE CATEGORY CLICK!!');
     this.props.hasBeenSelected(this.props.category[index]);
   }
 
@@ -22,7 +21,7 @@ export default class Category extends Component {
 
     return (
       <div id="categories-container">
-        <h1>{ categoryComponentArray }</h1>
+        { categoryComponentArray }
       </div>
     );
   }

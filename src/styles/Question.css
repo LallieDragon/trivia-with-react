@@ -1,4 +1,16 @@
-#questions-container {
-  width: 20vw;
-  height: 80vw;
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+#question-container {
+  position: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5vh;
+  width: 82vw;
+  height: 61vh;
+  background: linear-gradient(to right, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
 }

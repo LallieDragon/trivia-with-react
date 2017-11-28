@@ -27,7 +27,13 @@ export default class App extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.setState({ categories: [] });
+    this.setState({
+      categories: [],
+      selectedCategory: null,
+      scoreOne: 0,
+      scoreTwo: 0,
+      turn: 0
+    })
     this.axiosRequest();
   }
 
@@ -80,13 +86,14 @@ export default class App extends Component {
     this.setState({ selectedCategory: selectedCategory })
   }
 
-  handleScore(scoreOne, scoreTwo) {
+  handleScore(scoreOne, scoreTwo, turn) {
     var newScoreOne = this.state.scoreOne + scoreOne;
     var newScoreTwo = this.state.scoreTwo + scoreTwo;
 
     this.setState({
       scoreOne: newScoreOne,
-      scoreTwo: newScoreTwo
+      scoreTwo: newScoreTwo,
+      turn: turn
     })
   }
 
@@ -101,7 +108,9 @@ export default class App extends Component {
     else {
       categoryComponentArray = (
         <SelectedCategory category={ this.state.selectedCategory }
-                          handleScore={ this.handleScore }/>
+                          handleScore={ this.handleScore }
+                          hasBeenSelected={ this.hasBeenSelected }
+                          appInfo={ this.state } />
         )
     }
 
@@ -115,8 +124,9 @@ export default class App extends Component {
 
         <div id='game-container'>
           { categoryComponentArray }
-          <Scores data={ this.state } />
         </div>
+
+        <Scores info={ this.state } />
 
         <Footer />
       </div>

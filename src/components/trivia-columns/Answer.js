@@ -7,6 +7,26 @@ export default class Answer extends Component {
     this.state = {
       allAnswersArray: []
     }
+    this.checkAnswer = this.checkAnswer.bind(this);
+  }
+
+  checkAnswer(selectedAnswer) {
+    var correct = this.props.category.correct_answer;
+    var guess = this.state.allAnswersArray[selectedAnswer];
+
+    if ((guess === correct) && (this.props.appInfo.turn === 0)) {
+      this.props.handleScore(100, 0, 0);
+    }
+    if ((guess === correct) && (this.props.appInfo.turn === 1)) {
+      this.props.handleScore(0, 100, 1);
+    }
+    if ((guess !== correct) && (this.props.appInfo.turn === 0)) {
+      this.props.handleScore(0, 0, 1);
+    }
+    if ((guess !== correct) && (this.props.appInfo.turn === 1)) {
+      this.props.handleScore(0, 0, 0);
+    }
+    this.props.hasBeenSelected(null);
   }
 
   componentWillMount() {
@@ -31,15 +51,16 @@ export default class Answer extends Component {
   }
 
   render() {
-    console.log(this.state.allAnswersArray);
     var answersComponentArray = this.state.allAnswersArray.map((element, index) => (
-      <div key ={ index } className="answers">
+      <div onClick={ () => this.checkAnswer(index) } key ={ index } className="answers">
         <p>{ element }</p>
       </div>
     ))
 
     return (
-      { answersComponentArray }
+      <div>
+        { answersComponentArray }
+      </div>
     );
   }
 }

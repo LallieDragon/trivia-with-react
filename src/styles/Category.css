@@ -1,15 +1,18 @@
 #categories-container {
-  width: 21vw;
-  height: 90vh;
   display: flex;
-  flex-direction: column;
-  align-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 88vw;
+  height: 66vh;
 }
 
 .categories {
-  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 20vh;
+  font-size: 12px;
   width: 20vw;
   height: 20vh;
-  border: 2px solid black;
-  flex-wrap: wrap;
+  background: linear-gradient(to right, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%);
 }
