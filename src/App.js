@@ -27,6 +27,7 @@ export default class App extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.setState({ categories: [] });
     this.axiosRequest();
   }
 
@@ -38,30 +39,39 @@ export default class App extends Component {
     axios.get(filmUrl)
       .then((response) => {
         var catArray = this.state.categories
-        catArray.push(response.data.results)
+        for ( let i = 0; i < 4; i++) {
+          catArray.push(response.data.results[i])
+        }
         this.setState({
           categories: catArray
         })
+        // console.log(this.state.categories);
       })
       .catch((error) => { console.log(error) })
 
     axios.get(genUrl)
       .then((response) => {
         var catArray = this.state.categories;
-        catArray.push(response.data.results);
+        for ( let i = 0; i < 4; i++) {
+          catArray.push(response.data.results[i]);
+        }
         this.setState({
           categories: catArray
         })
+        // console.log(this.state.categories);
       })
       .catch((error) => { console.log(error) })
 
     axios.get(vidUrl)
       .then((response) => {
       var catArray = this.state.categories;
-      catArray.push(response.data.results);
+      for (let i = 0; i < 4; i++){
+        catArray.push(response.data.results[i]);
+      }
       this.setState({
         categories: catArray
       })
+        // console.log(this.state.categories);
     })
       .catch((error) => { console.log(error) })
     }
@@ -83,15 +93,16 @@ export default class App extends Component {
   render() {
     var categoryComponentArray;
     if (this.state.selectedCategory === null) {
-      categoryComponentArray = this.state.categories.map((category, index) => (
+      categoryComponentArray = (
         <Category hasBeenSelected={ this.hasBeenSelected }
-                  category={ category }
-                  key={ index } />
-                  ))
+                  category={ this.state.categories } />
+        )
     }
     else {
-      categoryComponentArray = [<SelectedCategory category={ this.state.selectedCategory }
-                                                  handleScore={ this.handleScore }/>]
+      categoryComponentArray = (
+        <SelectedCategory category={ this.state.selectedCategory }
+                          handleScore={ this.handleScore }/>
+        )
     }
 
     return (

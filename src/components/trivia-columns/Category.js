@@ -7,17 +7,19 @@ export default class Category extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(e) {
-    this.props.hasBeenSelected(this.props.category);
+  handleClick(index) {
+    console.log('HANDLE CATEGORY CLICK!!');
+    this.props.hasBeenSelected(this.props.category[index]);
   }
 
   render() {
     var categoryComponentArray;
     categoryComponentArray = this.props.category.map((element, index) => (
-      <div key={ index } onClick={ this.handleClick } className="categories">
+      <div key={ index } onClick={ () => { this.handleClick(index) } } className="categories">
         { element.category }
       </div>
-      ))
+    ))
+
     return (
       <div id="categories-container">
         <h1>{ categoryComponentArray }</h1>
