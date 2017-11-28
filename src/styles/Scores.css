@@ -1,0 +1,12 @@
+#scores {
+  width: 20vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.scores {
+  height: 20vh;
+  border: 2px solid black;
+}

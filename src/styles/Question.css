@@ -1,5 +1,4 @@
-#question-container {
-  width: 60vw;
-  height: 88vh;
-  border: 1px solid black;
+#questions-container {
+  width: 20vw;
+  height: 80vw;
 }

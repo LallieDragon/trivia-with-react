@@ -1,0 +1,14 @@
+#categories-container {
+  width: 21vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.categories {
+  font-size: 20px;
+  width: 20vw;
+  height: 20vh;
+  border: 2px solid black;
+}

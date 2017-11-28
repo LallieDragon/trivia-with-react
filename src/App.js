@@ -4,79 +4,95 @@ import './App.css';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Questions from './components/trivia-columns/Questions';
+import Category from './components/trivia-columns/Category';
+import SelectedCategory from './components/trivia-columns/SelectedCategory';
+import Scores from './components/trivia-columns/Scores';
 
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      responseData: []
+      categories: [],
+      selectedCategory: null,
+      scoreOne: 0,
+      scoreTwo: 0,
+      turn: 0
     }
+
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.axiosRequestFilm = this.axiosRequestFilm.bind(this);
+    this.axiosRequest = this.axiosRequest.bind(this);
+    this.hasBeenSelected = this.hasBeenSelected.bind(this);
+    this.handleScore = this.handleScore.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.axiosRequestFilm();
+    this.axiosRequest();
   }
 
-  axiosRequestFilm() {
-    this.setState({
-      responseData: []
-    });
-
+  axiosRequest() {
     var filmUrl = 'https://opentdb.com/api.php?amount=4&category=11&type=multiple';
     var genUrl = 'https://opentdb.com/api.php?amount=4&category=9&type=multiple';
     var vidUrl = 'https://opentdb.com/api.php?amount=4&category=15&type=multiple';
 
     axios.get(filmUrl)
       .then((response) => {
+        var catArray = this.state.categories
+        catArray.push(response.data.results)
         this.setState({
-          responseData: this.state.responseData.concat(response.data.results)
+          categories: catArray
         })
       })
-      .catch((error) => {
-        console.log(error)
-      })
+      .catch((error) => { console.log(error) })
 
     axios.get(genUrl)
       .then((response) => {
+        var catArray = this.state.categories;
+        catArray.push(response.data.results);
         this.setState({
-          responseData: this.state.responseData.concat(response.data.results)
+          categories: catArray
         })
       })
-      .catch((error) => {
-        console.log(error)
-      })
+      .catch((error) => { console.log(error) })
 
     axios.get(vidUrl)
       .then((response) => {
-        this.setState({
-          responseData: this.state.responseData.concat(response.data.results)
-        })
+      var catArray = this.state.categories;
+      catArray.push(response.data.results);
+      this.setState({
+        categories: catArray
       })
-      .catch((error) => {
-        console.log(error)
-      })
+    })
+      .catch((error) => { console.log(error) })
     }
 
-  render() {
-    var display;
+  hasBeenSelected(selectedCategory) {
+    this.setState({ selectedCategory: selectedCategory })
+  }
 
-    if (this.state.responseData.length === 12) {
-      display = (
-        <div id='questions'>
-          <Questions responseData={ this.state.responseData }/>
-        </div>
-        )
-      }
-      else {
-        display = (
-          <div id="empty-box">
-          </div>
-          )
-      }
+  handleScore(scoreOne, scoreTwo) {
+    var newScoreOne = this.state.scoreOne + scoreOne;
+    var newScoreTwo = this.state.scoreTwo + scoreTwo;
+
+    this.setState({
+      scoreOne: newScoreOne,
+      scoreTwo: newScoreTwo
+    })
+  }
+
+  render() {
+    var categoryComponentArray;
+    if (this.state.selectedCategory === null) {
+      categoryComponentArray = this.state.categories.map((category, index) => (
+        <Category hasBeenSelected={ this.hasBeenSelected }
+                  category={ category }
+                  key={ index } />
+                  ))
+    }
+    else {
+      categoryComponentArray = [<SelectedCategory category={ this.state.selectedCategory }
+                                                  handleScore={ this.handleScore }/>]
+    }
 
     return (
       <div className="App">
@@ -86,7 +102,10 @@ export default class App extends Component {
           <button onClick={ this.handleSubmit }><a>(re)</a>Start Game</button>
         </div>
 
-        { display }
+        <div id='game-container'>
+          { categoryComponentArray }
+          <Scores data={ this.state } />
+        </div>
 
         <Footer />
       </div>

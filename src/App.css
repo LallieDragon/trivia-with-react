@@ -1,5 +1,8 @@
-#empty-box {
-  height: 81vh;
-  width: 98%;
+#game-container {
+  width: 88vw;
+  height: 90vh;
   border: 2px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
