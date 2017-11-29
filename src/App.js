@@ -101,7 +101,6 @@ export default class App extends Component {
   }
 
   handleCorrect(correct) {
-    console.log('handling');
     if (correct !== []) {
       for (let i = 0; i < 12; i++) {
         if (correct === this.state.categories[i].correct_answer) {
