@@ -14,7 +14,7 @@ into your CLI to install the game.
 - ```npm install``` to install dependencies.
 - ```npm start``` to run in localhost:3000.
 
-or visit [the app](https://two-team-trivia.herokuapp.com/)
+or visit [the app](https://two-team-trivia.herokuapp.com/) on Heroku!
 
 ## The Concept
 
@@ -22,7 +22,7 @@ or visit [the app](https://two-team-trivia.herokuapp.com/)
 
 This is the final project for the Web Development Immersive course
 put on by General Assembly - Austin. The goal was to create a web
-application in a week using any programming language that we had 
+application in a few days using any programming language that we had 
 learned, inside or outside of the course.
 
 I decided to create a Trivia application using React.js and 
