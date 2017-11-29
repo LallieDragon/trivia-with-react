@@ -6,7 +6,7 @@ export default class Header extends Component {
     return (
       <div id="header">
         <div id="header-title">
-          <h1 id="title-text">Two Player Trivia with React</h1>
+          <h1 id="title-text">Trivia with React</h1>
         </div>
       </div>
     );

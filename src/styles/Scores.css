@@ -4,50 +4,60 @@
   height: 10vh;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
-
 
 h1 {
   font-size: 3vh;
 }
 
 .scores {
-  border-radius: 3px;
-  border: 1px solid black;
   display: flex;
-  flex: 3;
+  justify-content: space-between;
 }
 
 #score-one {
   margin: auto;
-  width: 30vw;
+  width: 28vw;
   padding:.5em;
   text-align: center;
+  box-shadow: inset 0 0 10px #12B242;
+  border: 1px solid #32FF70;
+  border-radius: 3px;
 }
 
 #score-one-number {
   text-align: center;
+  font-size: 5vh;
 }
 
 #score-two {
   font-size: 3vh;
   margin: auto;
-  width: 30vw;
+  width: 28vw;
   padding: .5em;
   text-align: center;
+  box-shadow: inset 0 0 10px #B26400;
+  border: 1px solid #FF9431;
+  border-radius: 3px;
 }
 
 #score-two-number {
   text-align: center;
+  font-size: 5vh;
 }
 
 #turn-display {
-  font-size: 3vh;
+  height: 6vh;
+  font-size: 4vh;
   margin: auto;
-  padding: .5em;
+  padding-right: 1vh;
+  padding-left: 1vh;
+  padding-top: 2.5vh;
+  padding-bottom: .5vh;
   text-align: center;
-}
-
-#team-name {
+  box-shadow: inset 0 0 10px #0074B2;
+  border: 1px solid #00A6FF;
   border-radius: 3px;
 }
+
