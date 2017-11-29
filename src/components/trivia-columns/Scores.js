@@ -16,12 +16,13 @@ export default class Scores extends Component {
 
     return (
       <div id="scores">
-        <div className="scores">
-          <h1 id="turn-display">{ team }</h1>
-        </div>
 
         <div className="scores">
           <h1 id="score-one">Team One: <a id="score-one-number">{ scoreOne }</a></h1>
+        </div>
+
+        <div className="scores">
+          <h1 id="turn-display">{ team }</h1>
         </div>
 
         <div className="scores">

@@ -17,6 +17,6 @@ html, body {
 #button {
   font-family: 'Montserrat', sans-serif;
   padding: 10px;
-  background: rgba(222,229,42,1);
+  background: #93B7BE;
   box-shadow: inset 0 0 5px #000;
 }

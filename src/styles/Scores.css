@@ -17,11 +17,12 @@ h1 {
 }
 
 #score-one {
+  color: white;
   margin: auto;
   width: 28vw;
   padding:.5em;
   text-align: center;
-  background: rgba(110,229,42,1);
+  background: #FA9F42;
   box-shadow: inset 0 0 5px #000;
 }
 
@@ -31,12 +32,13 @@ h1 {
 }
 
 #score-two {
+  color: white;
   font-size: 3vh;
   margin: auto;
   width: 28vw;
   padding: .5em;
   text-align: center;
-  background: rgba(173,42,229,1);
+  background: #FA9F42;
   box-shadow: inset 0 0 5px #000;
 }
 
@@ -46,6 +48,7 @@ h1 {
 }
 
 #turn-display {
+  color: white;
   height: 6vh;
   font-size: 4vh;
   margin: auto;
@@ -54,7 +57,7 @@ h1 {
   padding-top: 2.5vh;
   padding-bottom: .5vh;
   text-align: center;
-  background: rgba(229,42,42,1);
+  background: #721817;
   box-shadow: inset 0 0 5px #000;
 
 }
