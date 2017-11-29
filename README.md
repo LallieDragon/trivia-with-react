@@ -18,6 +18,8 @@ or visit [the app](https://two-team-trivia.herokuapp.com/)
 
 ## The Concept
 
+![initial play screen](public/screenshots/initialscreen.png)
+
 This is the final project for the Web Development Immersive course
 put on by General Assembly - Austin. The goal was to create a web
 application in a week using any programming language that we had 
