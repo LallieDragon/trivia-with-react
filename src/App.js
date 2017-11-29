@@ -123,7 +123,9 @@ export default class App extends Component {
           { categoryComponentArray }
         </div>
 
-        <Scores info={ this.state } />
+        <div id="scores-container">
+          <Scores info={ this.state } />
+        </div>
 
         <Footer />
       </div>

@@ -3,5 +3,9 @@
   height: 10vh;
   border: 1px solid black;
   border-radius: 5px;
+  margin: 5vh;
+  text-align: center;
+  padding-top: 0.5em;
+  background: linear-gradient(to right, rgba(99,9,217,1) 0%, rgba(161,108,240,1) 44%, rgba(99,9,217,1) 100%);
 }
 
