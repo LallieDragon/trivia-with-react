@@ -6,7 +6,7 @@ footer {
   text-align: center;
   color: white;
   height: 5vh;
-  background: linear-gradient(to bottom, rgba(185,42,229,1) 0%, rgba(222,168,235,1) 50%, rgba(185,42,229,1) 100%);
+  background: rgba(229,151,42,1);
 }
 
 #footer-text {

@@ -17,7 +17,7 @@ export default class Scores extends Component {
     return (
       <div id="scores">
         <div className="scores">
-          <h1 id="turn-display">{ team }'s turn!</h1>
+          <h1 id="turn-display">{ team }</h1>
         </div>
 
         <div className="scores">

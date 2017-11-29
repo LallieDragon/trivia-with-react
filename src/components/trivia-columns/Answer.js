@@ -58,7 +58,7 @@ export default class Answer extends Component {
     ))
 
     return (
-      <div>
+      <div id="answers-display">
         { answersComponentArray }
       </div>
     );
