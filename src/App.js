@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Category from './components/trivia-columns/Category';
 import SelectedCategory from './components/trivia-columns/SelectedCategory';
 import Scores from './components/trivia-columns/Scores';
+import WinPage from './components/trivia-columns/WinPage';
 
 export default class App extends Component {
   constructor(props) {
@@ -112,19 +113,29 @@ export default class App extends Component {
 
   render() {
     var categoryComponentArray;
-    if (this.state.selectedCategory === null) {
+    var scoreOne = this.state.scoreOne;
+    var scoreTwo = this.state.scoreTwo;
+
+    if ((scoreOne > 600) || (scoreTwo > 600)) {
       categoryComponentArray = (
-        <Category hasBeenSelected={ this.hasBeenSelected }
-                  category={ this.state.categories } />
-        )
+        <WinPage data={ this.state } />
+      )
     }
     else {
-      categoryComponentArray = (
-        <SelectedCategory category={ this.state.selectedCategory }
-                          handleScore={ this.handleScore }
-                          hasBeenSelected={ this.hasBeenSelected }
-                          appInfo={ this.state } />
-        )
+      if (this.state.selectedCategory === null) {
+        categoryComponentArray = (
+          <Category hasBeenSelected={ this.hasBeenSelected }
+                    category={ this.state.categories } />
+          )
+      }
+      else {
+        categoryComponentArray = (
+          <SelectedCategory category={ this.state.selectedCategory }
+                            handleScore={ this.handleScore }
+                            hasBeenSelected={ this.hasBeenSelected }
+                            appInfo={ this.state } />
+          )
+      }
     }
 
     return (
