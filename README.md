@@ -29,7 +29,7 @@ array of categories. The data returned from the call is made up of
 three question categories; General Knowledge, Entertainment: Films,
 Entertainment: Video Games.
 
-![alt text](public/trivia.pdf "Wireframes")
+![alt text](https://github.com/LallieDragon/trivia-with-react/blob/master/public/Trivia.pdf "Wireframes")
 
 ## Operating the Game
 
