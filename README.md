@@ -4,7 +4,6 @@
 - [The Concept](#the-concept)
 - [Operating the Game](#operating-the-game)
 - [The Code](#the-code)
-- [In Retrospect](#in-retrospect)
 - [Future Versions](#future-versions)
 
 ## Getting Started
@@ -14,6 +13,8 @@ into your CLI to install the game.
 - ```cd react-trivia```
 - ```npm install``` to install dependencies.
 - ```npm start``` to run in localhost:3000.
+
+or visit [the app](https://two-team-trivia.herokuapp.com/)
 
 ## The Concept
 
@@ -29,7 +30,7 @@ array of categories. The data returned from the call is made up of
 three question categories; General Knowledge, Entertainment: Films,
 Entertainment: Video Games.
 
-![alt text](public/screenshots/wireframe.png "Wireframes")
+![wireframe](public/screenshots/wireframe.png)
 
 ## Operating the Game
 
@@ -51,10 +52,19 @@ to update this.state of my App.js file. On the second take I took advantage of t
 chance to rewire my wireframes, exhibiting the need for passing the lift functions
 as well as where they needed to be passed to. 
 
+![this.state](public/screenshots/thisdotstate.png)
+
 I would say that my main obstacle in this web application was simply utilizing those 
 lift functions and rendering different things based on what they did to this.state. 
 Eventually I was able to get the architecture of the code just right so that when you
 click on the category you wish to guess from it would then exhibit the question. 
 
-## In Retrospect
+![this.state](public/screenshots/changecomponent.png)
+
 ## Future Versions
+
+When I continue working on Trivia With React, I will add a component that will record 
+the number of games won by each team. I will also make it so that if a correct answer 
+has been given, the corresponding category div will not allow the user view the empty 
+question component. Ideally the user(s) will also be able to decide what categories 
+of questions they want pulled from the API.
