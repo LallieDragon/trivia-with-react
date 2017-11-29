@@ -15,16 +15,16 @@ export default class Answer extends Component {
     var guess = this.state.allAnswersArray[selectedAnswer];
 
     if ((guess === correct) && (this.props.appInfo.turn === 0)) {
-      this.props.handleScore(100, 0, 0);
+      this.props.handleScore(100, 0, 0, guess);
     }
     if ((guess === correct) && (this.props.appInfo.turn === 1)) {
-      this.props.handleScore(0, 100, 1);
+      this.props.handleScore(0, 100, 1, guess);
     }
     if ((guess !== correct) && (this.props.appInfo.turn === 0)) {
-      this.props.handleScore(0, 0, 1);
+      this.props.handleScore(0, 0, 1, []);
     }
     if ((guess !== correct) && (this.props.appInfo.turn === 1)) {
-      this.props.handleScore(0, 0, 0);
+      this.props.handleScore(0, 0, 0, []);
     }
     this.props.hasBeenSelected(null);
   }

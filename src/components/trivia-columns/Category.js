@@ -13,6 +13,7 @@ export default class Category extends Component {
 
   render() {
     var categoryComponentArray;
+    if (this.props.category)
     categoryComponentArray = this.props.category.map((element, index) => (
       <div key={ index } onClick={ () => { this.handleClick(index) } } className="categories">
         <p className="category-name">{ element.category }</p>

@@ -16,13 +16,15 @@ export default class App extends Component {
       selectedCategory: null,
       scoreOne: 0,
       scoreTwo: 0,
-      turn: 0
+      turn: 0,
+      guessedCorrectly: []
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.axiosRequest = this.axiosRequest.bind(this);
     this.hasBeenSelected = this.hasBeenSelected.bind(this);
     this.handleScore = this.handleScore.bind(this);
+    this.handleCorrect = this.handleCorrect.bind(this);
   }
 
   handleSubmit(e) {
@@ -83,15 +85,30 @@ export default class App extends Component {
     this.setState({ selectedCategory: selectedCategory })
   }
 
-  handleScore(scoreOne, scoreTwo, turn) {
+  handleScore(scoreOne, scoreTwo, turn, correct) {
     var newScoreOne = this.state.scoreOne + scoreOne;
     var newScoreTwo = this.state.scoreTwo + scoreTwo;
+
 
     this.setState({
       scoreOne: newScoreOne,
       scoreTwo: newScoreTwo,
-      turn: turn
+      turn: turn,
+      guessedCorrectly: correct
     })
+
+    this.handleCorrect(correct);
+  }
+
+  handleCorrect(correct) {
+    console.log('handling');
+    if (correct !== []) {
+      for (let i = 0; i < 12; i++) {
+        if (correct === this.state.categories[i].correct_answer) {
+          this.state.categories.splice(i, 1, ['Answered']);
+        }
+      }
+    }
   }
 
   render() {

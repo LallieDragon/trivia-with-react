@@ -12,10 +12,9 @@ export default class Question extends Component {
   }
 
   render() {
-    console.log(this.props.category);
     return (
       <div onClick={ this.props.hasBeenSelected } id="question-container">
-        { this.props.category.question }
+        <p className="question-text">{ this.props.category.question }</p>
       </div>
     );
   }
