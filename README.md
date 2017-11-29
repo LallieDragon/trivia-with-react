@@ -29,7 +29,7 @@ array of categories. The data returned from the call is made up of
 three question categories; General Knowledge, Entertainment: Films,
 Entertainment: Video Games.
 
-![Diagram of Trivia Frame](./public/trivia.pdf)
+![alt text](public/trivia.pdf "Wireframes")
 
 ## Operating the Game
 
