@@ -1,5 +1,7 @@
-#answer-container {
+.answers {
   width: 20vw;
-  height: 20vh;
+  height: 10vh;
   border: 1px solid black;
+  border-radius: 5px;
 }
+

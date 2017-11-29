@@ -51,7 +51,6 @@ export default class App extends Component {
         this.setState({
           categories: catArray
         })
-        // console.log(this.state.categories);
       })
       .catch((error) => { console.log(error) })
 
@@ -64,7 +63,6 @@ export default class App extends Component {
         this.setState({
           categories: catArray
         })
-        // console.log(this.state.categories);
       })
       .catch((error) => { console.log(error) })
 
@@ -77,7 +75,6 @@ export default class App extends Component {
       this.setState({
         categories: catArray
       })
-        // console.log(this.state.categories);
     })
       .catch((error) => { console.log(error) })
     }
@@ -115,11 +112,11 @@ export default class App extends Component {
     }
 
     return (
-      <div className="App">
+      <div id="start-page" className="App">
         <Header />
 
         <div id="start-button">
-          <button onClick={ this.handleSubmit }><a>(re)</a>Start Game</button>
+          <p id="button" onClick={ this.handleSubmit }><a>(re)</a>Start Game</p>
         </div>
 
         <div id='game-container'>

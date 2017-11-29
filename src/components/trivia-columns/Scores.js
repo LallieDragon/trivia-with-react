@@ -17,15 +17,15 @@ export default class Scores extends Component {
     return (
       <div id="scores">
         <div className="scores">
-          <h1 id="score-one">Team One: { scoreOne } points</h1>
+          <h1 id="turn-display">It is <a id="team-name">{ team }</a>'s turn!</h1>
         </div>
 
         <div className="scores">
-          <h1 id="turn-display">It is { team }'s turn!</h1>
+          <h1 id="score-one">Team One: <a id="score-one-number">{ scoreOne }</a></h1>
         </div>
 
         <div className="scores">
-          <h1 id="score-two">Team Two: { scoreTwo } points</h1>
+          <h1 id="score-two">Team Two: <a id="score-two-number">{ scoreTwo }</a></h1>
         </div>
       </div>
     );

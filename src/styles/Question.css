@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 #question-container {
+  border: 1px solid black;
   position: center;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+  padding: .5em;
   margin: auto;
-  color: white;
-  font-family: 'Montserrat', sans-serif;
+  color: black;
   font-size: 5vh;
   width: 82vw;
   height: 61vh;

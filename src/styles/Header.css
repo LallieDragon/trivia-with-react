@@ -1,6 +1,6 @@
 #header-title {
   height: 6vh;
-  width: 100%;
+  width: 100vw;
   color: white;
   background: -moz-linear-gradient(top, rgba(203,96,179,1) 0%, rgba(173,18,131,1) 50%, rgba(222,71,172,1) 100%);
   background: -webkit-linear-gradient(top, rgba(203,96,179,1) 0%,rgba(173,18,131,1) 50%,rgba(222,71,172,1) 100%);
@@ -8,5 +8,7 @@
 }
 
 #title-text {
-  padding-top: 0.5vh;
+  margin: 0;
+  padding: 1.5vh;
+  text-align: center;
 }

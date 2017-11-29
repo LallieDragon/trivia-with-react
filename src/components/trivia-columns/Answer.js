@@ -53,7 +53,7 @@ export default class Answer extends Component {
   render() {
     var answersComponentArray = this.state.allAnswersArray.map((element, index) => (
       <div onClick={ () => this.checkAnswer(index) } key ={ index } className="answers">
-        <p>{ element }</p>
+        <p className="possible-guesses">{ element }</p>
       </div>
     ))
 
