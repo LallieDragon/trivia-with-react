@@ -90,7 +90,6 @@ export default class App extends Component {
     var newScoreOne = this.state.scoreOne + scoreOne;
     var newScoreTwo = this.state.scoreTwo + scoreTwo;
 
-
     this.setState({
       scoreOne: newScoreOne,
       scoreTwo: newScoreTwo,
@@ -105,7 +104,7 @@ export default class App extends Component {
     if (correct !== []) {
       for (let i = 0; i < 12; i++) {
         if (correct === this.state.categories[i].correct_answer) {
-          this.state.categories.splice(i, 1, ['Answered']);
+          this.state.categories.splice(i, 1, 'Answered');
         }
       }
     }

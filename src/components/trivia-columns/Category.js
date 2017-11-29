@@ -8,7 +8,10 @@ export default class Category extends Component {
   }
 
   handleClick(index) {
-    this.props.hasBeenSelected(this.props.category[index]);
+    console.log("handleClick")
+    if (this.props.category[index] !== 'Answered') {
+      this.props.hasBeenSelected(this.props.category[index]);
+    }
   }
 
   render() {
