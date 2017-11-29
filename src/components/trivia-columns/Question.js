@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../../styles/Question.css';
+import he from 'he';
 
 export default class Question extends Component {
   constructor(props) {
@@ -12,9 +13,11 @@ export default class Question extends Component {
   }
 
   render() {
+    var display = he.decode( this.props.category.question );
+
     return (
       <div onClick={ this.props.hasBeenSelected } id="question-container">
-        <p className="question-text">{ this.props.category.question }</p>
+        <p className="question-text">{ display }</p>
       </div>
     );
   }

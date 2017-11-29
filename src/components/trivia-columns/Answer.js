@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../../styles/Answer.css';
+import he from 'he';
 
 export default class Answer extends Component {
   constructor(props) {
@@ -53,7 +54,7 @@ export default class Answer extends Component {
   render() {
     var answersComponentArray = this.state.allAnswersArray.map((element, index) => (
       <div onClick={ () => this.checkAnswer(index) } key ={ index } className="answers">
-        <p className="possible-guesses">{ element }</p>
+        <p className="possible-guesses">{ he.decode(element) }</p>
       </div>
     ))
 
