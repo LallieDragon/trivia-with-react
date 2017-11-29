@@ -9,8 +9,8 @@
 
 ## Getting Started
 
-- Type ```git clone https://github.com/LallieDragon/trivia-with-react.git``` into 
-your CLI to install the game. 
+- Type ```git clone https://github.com/LallieDragon/trivia-with-react.git``` 
+into your CLI to install the game. 
 - ```cd react-trivia```
 - ```npm install``` to install dependencies.
 - ```npm start``` to run in localhost:3000.
@@ -29,7 +29,7 @@ array of categories. The data returned from the call is made up of
 three question categories; General Knowledge, Entertainment: Films,
 Entertainment: Video Games.
 
-![alt text](https://github.com/LallieDragon/trivia-with-react/blob/master/public/Trivia.pdf "Wireframes")
+![alt text](public/screenshots/wireframe.png "Wireframes")
 
 ## Operating the Game
 
@@ -44,5 +44,17 @@ Rules:
 The current team will not change until a question is answered incorrectly.
 
 ## The Code
+
+My initial attempt at coding this application did not take much advantage of
+React's super flexible components nor did I initially plan to have lift functions
+to update this.state of my App.js file. On the second take I took advantage of the 
+chance to rewire my wireframes, exhibiting the need for passing the lift functions
+as well as where they needed to be passed to. 
+
+I would say that my main obstacle in this web application was simply utilizing those 
+lift functions and rendering different things based on what they did to this.state. 
+Eventually I was able to get the architecture of the code just right so that when you
+click on the category you wish to guess from it would then exhibit the question. 
+
 ## In Retrospect
 ## Future Versions
