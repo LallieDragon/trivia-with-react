@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/common/Header';
+import Footer from './components/common/Footer';
 import Category from './components/trivia-columns/Category';
 import SelectedCategory from './components/trivia-columns/SelectedCategory';
 import Scores from './components/trivia-columns/Scores';
@@ -37,6 +37,7 @@ export default class App extends Component {
       scoreTwo: 0,
       turn: 0
     })
+
     this.axiosRequest();
   }
 
@@ -71,14 +72,14 @@ export default class App extends Component {
 
     axios.get(animalUrl)
       .then((response) => {
-      var catArray = this.state.categories;
-      for (let i = 0; i < 4; i++){
-        catArray.push(response.data.results[i]);
-      }
-      this.setState({
-        categories: catArray
+        var catArray = this.state.categories;
+        for (let i = 0; i < 4; i++){
+          catArray.push(response.data.results[i]);
+        }
+        this.setState({
+          categories: catArray
+        })
       })
-    })
       .catch((error) => { console.log(error) })
     }
 

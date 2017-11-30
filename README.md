@@ -44,7 +44,8 @@ Rules:
 - The players are made up of two teams. Team one will always begin.
 - The active team picks a category and attempts to answer the question. 
 - If answered correctly, 100 points will be added to the active team's score.
-The current team will not change until a question is answered incorrectly.
+- The current team will not change until a question is answered incorrectly.
+- The game is over when one team has reached 700 points.
 
 ## The Code
 
@@ -66,7 +67,4 @@ click on the category you wish to guess from it would then exhibit the question.
 ## Future Versions
 
 When I continue working on Trivia With React, I will add a component that will record 
-the number of games won by each team. I will also make it so that if a correct answer 
-has been given, the corresponding category div will not allow the user view the empty 
-question component. Ideally the user(s) will also be able to decide what categories 
-of questions they want pulled from the API.
+the number of games won by each team. Ideally the user(s) will also be able to decide what categories of questions they want pulled from the API.
