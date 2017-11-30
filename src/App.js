@@ -42,8 +42,8 @@ export default class App extends Component {
 
   axiosRequest() {
     var filmUrl = 'https://opentdb.com/api.php?amount=4&category=11&type=multiple';
-    var genUrl = 'https://opentdb.com/api.php?amount=4&category=9&type=multiple';
-    var vidUrl = 'https://opentdb.com/api.php?amount=4&category=15&type=multiple';
+    var historyUrl = 'https://opentdb.com/api.php?amount=4&category=23&type=multiple';
+    var animalUrl = 'https://opentdb.com/api.php?amount=4&category=27&type=multiple';
 
     axios.get(filmUrl)
       .then((response) => {
@@ -57,7 +57,7 @@ export default class App extends Component {
       })
       .catch((error) => { console.log(error) })
 
-    axios.get(genUrl)
+    axios.get(historyUrl)
       .then((response) => {
         var catArray = this.state.categories;
         for ( let i = 0; i < 4; i++) {
@@ -69,7 +69,7 @@ export default class App extends Component {
       })
       .catch((error) => { console.log(error) })
 
-    axios.get(vidUrl)
+    axios.get(animalUrl)
       .then((response) => {
       var catArray = this.state.categories;
       for (let i = 0; i < 4; i++){

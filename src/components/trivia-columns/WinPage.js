@@ -16,11 +16,15 @@ export default class WinPage extends Component {
     }
 
     winnerDisplay = (
-      <h1 id="winner-display">{ team } has won!</h1>
+      <div id="winner">
+        <h1 id="winner-display">{ team } has won!</h1>
+        <iframe src="https://giphy.com/embed/xThuWp2hJABbmc20Ew" width="480" height="297" frameBorder="0" className="giphy-embed" allowFullScreen></iframe>
+        <p><a id="giphy" href="https://giphy.com/gifs/nickatnite-friends-excited-tv-xThuWp2hJABbmc20Ew">via GIPHY</a></p>
+      </div>
     )
 
     return (
-      <div id="winner">
+      <div>
         { winnerDisplay }
       </div>
     );

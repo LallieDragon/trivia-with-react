@@ -14,3 +14,14 @@
 #winner-display {
   text-align: center;
 }
+
+.giphy-embed {
+  margin-left: 17vw;
+}
+
+#giphy {
+  font-size: 12px;
+  text-decoration: none;
+  color: black;
+  margin-left: 40vw;
+}
