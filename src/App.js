@@ -42,11 +42,11 @@ export default class App extends Component {
   }
 
   axiosRequest() {
-    var filmUrl = 'https://opentdb.com/api.php?amount=4&category=11&type=multiple';
+    var vidGameUrl = 'https://opentdb.com/api.php?amount=4&category=15&type=multiple';
     var historyUrl = 'https://opentdb.com/api.php?amount=4&category=23&type=multiple';
     var animalUrl = 'https://opentdb.com/api.php?amount=4&category=27&type=multiple';
 
-    axios.get(filmUrl)
+    axios.get(vidGameUrl)
       .then((response) => {
         var catArray = this.state.categories
         for ( let i = 0; i < 4; i++) {

@@ -31,11 +31,12 @@ export default class Answer extends Component {
   }
 
   componentWillMount() {
-    // console.log(correctAnswer);
+    console.log(correctAnswer);
     var allAnswersArray = [];
     var correctAnswer = this.props.category.correct_answer;
     var incorrectAnswers = this.props.category.incorrect_answers;
     var correctAnswerIndex = Math.floor((Math.random() * incorrectAnswers.length) + 1);
+
     for (let i = 0; i < 3; i++) {
       if (correctAnswerIndex === i) {
         allAnswersArray.push(correctAnswer);
