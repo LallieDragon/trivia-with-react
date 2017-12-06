@@ -14,19 +14,40 @@ export default class Answer extends Component {
   checkAnswer(selectedAnswer) {
     var correct = this.props.category.correct_answer;
     var guess = this.state.allAnswersArray[selectedAnswer];
+    var difficulty = this.props.category.difficulty;
 
     if ((guess === correct) && (this.props.appInfo.turn === 0)) {
-      this.props.handleScore(100, 0, 0, guess);
+      if (difficulty === "easy") {
+        this.props.handleScore(100, 0, 0, guess);
+      }
+      if (difficulty === "medium") {
+        this.props.handleScore(200, 0, 0, guess);
+      }
+      if (difficulty === "hard") {
+        this.props.handleScore(300, 0, 0, guess);
+      }
     }
+
     if ((guess === correct) && (this.props.appInfo.turn === 1)) {
-      this.props.handleScore(0, 100, 1, guess);
+      if (difficulty === "easy") {
+        this.props.handleScore(0, 100, 0, guess);
+      }
+      if (difficulty === "medium") {
+        this.props.handleScore(0, 200, 0, guess);
+      }
+      if (difficulty === "hard") {
+        this.props.handleScore(0, 300, 0, guess);
+      }
     }
+
     if ((guess !== correct) && (this.props.appInfo.turn === 0)) {
       this.props.handleScore(0, 0, 1, []);
     }
+
     if ((guess !== correct) && (this.props.appInfo.turn === 1)) {
       this.props.handleScore(0, 0, 0, []);
     }
+
     this.props.hasBeenSelected(null);
   }
 

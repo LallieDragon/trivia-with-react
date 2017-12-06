@@ -115,8 +115,15 @@ export default class App extends Component {
     var categoryComponentArray;
     var scoreOne = this.state.scoreOne;
     var scoreTwo = this.state.scoreTwo;
+    var count;
 
-    if ((scoreOne > 600) || (scoreTwo > 600)) {
+    for (var i; i < 12; i ++){
+      if (this.state.categories[i] === "Answered") {
+        count += 1;
+      }
+    }
+
+    if (count > 11) {
       categoryComponentArray = (
         <WinPage data={ this.state } />
       )
