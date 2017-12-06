@@ -116,8 +116,6 @@ export default class App extends Component {
 
   render() {
     var categoryComponentArray;
-    var scoreOne = this.state.scoreOne;
-    var scoreTwo = this.state.scoreTwo;
 
     if (this.state.count > 11) {
       categoryComponentArray = (

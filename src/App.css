@@ -1,9 +1,7 @@
-/*@import url('https://fonts.googleapis.com/css?family=Montserrat');*/
-
 html, body {
   font-family: 'Raleway', sans-serif;
-  height: 100%;
-  width: 100%;
+  height: auto;
+  width: 99%;
   margin: 0;
   padding: 0;
 }

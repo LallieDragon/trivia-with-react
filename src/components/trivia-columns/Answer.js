@@ -52,7 +52,6 @@ export default class Answer extends Component {
   }
 
   componentWillMount() {
-    console.log(correctAnswer);
     var allAnswersArray = [];
     var correctAnswer = this.props.category.correct_answer;
     var incorrectAnswers = this.props.category.incorrect_answers;
