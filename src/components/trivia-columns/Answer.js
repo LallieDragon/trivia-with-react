@@ -64,9 +64,12 @@ export default class Answer extends Component {
 
     return (
       <div id="answers-display">
-        <h1 id="question"> { display }</h1>
-        { answersComponentArray }
-      }
+        <div id="question-header">
+          <h1 id="question"> { display }</h1>
+        </div>
+        <div id="answers">
+          { answersComponentArray }
+        </div>
       </div>
     );
   }

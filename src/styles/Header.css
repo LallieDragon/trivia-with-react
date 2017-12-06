@@ -1,5 +1,5 @@
 #header-title {
-  height: 6vh;
+  height: 8vh;
   width: 100vw;
   color: white;
   background: #232323;
@@ -8,7 +8,8 @@
 }
 
 #title-text {
+  font-family: 'Ranchers', cursive;
+  font-size:6vh;
   margin: 0;
-  padding: 1.5vh;
   text-align: center;
 }

@@ -7,8 +7,16 @@
   width: 88vw;
   height: 64vh;
   margin-bottom: 2vh;
-  background: linear-gradient(to bottom, rgba(14,64,45,1) 0%, rgba(24,102,72,1) 50%, rgba(14,64,45,1) 100%);
+  background: linear-gradient(to bottom, rgba(57,182,57,1) 0%, rgba(76,189,76,1) 32%, rgba(111,202,111,1) 100%);
   box-shadow: inset 0 0 5px #000;
+  padding-top: 8vh;
+  padding-bottom: 8vh;
+  padding-left: 8vw;
+  padding-right: 8vw
+}
+
+#question-container:hover {
+  background: linear-gradient(to bottom, rgba(111,202,111,1) 0%, rgba(76,189,76,1) 32%, rgba(57,182,57,1) 100%);
 }
 
 .question-text {
