@@ -18,7 +18,8 @@ export default class App extends Component {
       scoreOne: 0,
       scoreTwo: 0,
       turn: 0,
-      guessedCorrectly: []
+      guessedCorrectly: [],
+      count: 0
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -35,7 +36,8 @@ export default class App extends Component {
       selectedCategory: null,
       scoreOne: 0,
       scoreTwo: 0,
-      turn: 0
+      turn: 0,
+      count: 0
     })
 
     this.axiosRequest();
@@ -105,7 +107,8 @@ export default class App extends Component {
     if (correct !== []) {
       for (let i = 0; i < 12; i++) {
         if (correct === this.state.categories[i].correct_answer) {
-          this.state.categories.splice(i, 1, 'Answered');
+          this.state.categories.splice(i, 1, "Answered");
+          this.setState({ count: this.state.count + 1 });
         }
       }
     }
@@ -115,19 +118,13 @@ export default class App extends Component {
     var categoryComponentArray;
     var scoreOne = this.state.scoreOne;
     var scoreTwo = this.state.scoreTwo;
-    var count;
 
-    for (var i; i < 12; i ++){
-      if (this.state.categories[i] === "Answered") {
-        count += 1;
-      }
-    }
-
-    if (count > 11) {
+    if (this.state.count > 11) {
       categoryComponentArray = (
         <WinPage data={ this.state } />
       )
     }
+
     else {
       if (this.state.selectedCategory === null) {
         categoryComponentArray = (
@@ -150,7 +147,7 @@ export default class App extends Component {
         <Header />
 
         <div id="start-button">
-          <p id="button" onClick={ this.handleSubmit }><a>(re)</a>Start Game</p>
+          <p id="button" onClick={ this.handleSubmit }>(re)Start Game</p>
         </div>
 
         <div id='game-container'>
