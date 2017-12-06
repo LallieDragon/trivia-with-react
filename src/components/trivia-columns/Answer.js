@@ -60,9 +60,13 @@ export default class Answer extends Component {
       </div>
     ))
 
+    var display = he.decode( this.props.category.question );
+
     return (
       <div id="answers-display">
+        <h1 id="question"> { display }</h1>
         { answersComponentArray }
+      }
       </div>
     );
   }
