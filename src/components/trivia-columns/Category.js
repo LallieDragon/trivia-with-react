@@ -18,7 +18,7 @@ export default class Category extends Component {
 
     categoryComponentArray = this.props.category.map((element, index) => (
       <div key={ index } onClick={ () => { this.handleClick(index) } } className="categories">
-        <h3 className="category-name">{ element.category }</h3>
+        <h1 className="category-name">{ element.category }</h1>
         <h3 className="difficulty-level">{ element.difficulty }</h3>
       </div>
     ))
